@@ -1,0 +1,21 @@
+#-*-coding:utf-8-*-
+import random
+k=1;  
+arraylist=[];  
+for i in range(1,101):  
+    arraylist.append(i);  
+random.shuffle(arraylist);  
+print arraylist;
+maxlist=[];
+for i in range(0,k):
+    maxlist.append(arraylist[i]);  
+maxlist.sort(cmp=None, key=None, reverse=True);
+  
+for i in range(k,len(arraylist)):
+    if arraylist[i]>maxlist[k-1]:
+        maxlist.pop();
+        maxlist.append(arraylist[i]);
+        maxlist.sort(cmp=None, key=None, reverse=True);
+  
+print maxlist;  
+
